@@ -25,7 +25,7 @@ public abstract class KanyeCommand implements CommandExecutor, TabCompleter
     private final String usage;
     private final String aliases;
     private final Rank rank;
-    private final boolean allowConsole;
+    private final Source source;
     public KanyeMod plugin = KanyeMod.getInstance();
     public final Admin admins = Admin.getConfig();
 
@@ -39,7 +39,7 @@ public abstract class KanyeCommand implements CommandExecutor, TabCompleter
         this.usage = params.usage();
         this.aliases = params.aliases();
         this.rank = params.rank();
-        this.allowConsole = params.allowConsole();
+        this.source = params.source();
     }
 
     public void register()
@@ -96,9 +96,15 @@ public abstract class KanyeCommand implements CommandExecutor, TabCompleter
         {
             if (cmd != null)
             {
-                if (!cmd.allowConsole && sender instanceof ConsoleCommandSender)
+                if (params.source() == Source.IN_GAME && sender instanceof ConsoleCommandSender)
                 {
                     sender.sendMessage(ChatColor.RED + "Console senders are not allowed to execute this command!");
+                    return true;
+                }
+
+                if (params.source() == Source.CONSOLE && sender instanceof Player)
+                {
+                    sender.sendMessage(ChatColor.RED + "Only console senders are allowed to execute this command!");
                     return true;
                 }
 

@@ -17,5 +17,5 @@ public @interface CommandParameters
 
     Rank rank() default Rank.IMPOSTOR;
 
-    boolean allowConsole() default true;
+    Source source() default Source.ALL;
 }

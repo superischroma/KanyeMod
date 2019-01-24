@@ -38,6 +38,10 @@ public class AdminList
     {
         return RankManager.getRank(player).isAdmin;
     }
+    public static boolean isImpostor(Player player)
+    {
+        return !admins.getStringList(player.getName().toLowerCase() + ".ips").contains(KUtil.getIp(player));
+    }
     public static void updateRank(Player player, Rank rank)
     {
         admins.set(player.getName().toLowerCase() + ".rank", rank.name());
