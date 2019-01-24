@@ -1,0 +1,15 @@
+#
+# Main Configuration - KanyeMod
+#
+
+# Server
+server:
+
+  # Server Name
+  name: KanyeCraft
+
+  # Executives
+  executives: []
+
+  # Owner(s)
+  owners: []

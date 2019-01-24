@@ -1,0 +1,6 @@
+#
+# Plugin Configuration - KanyeCraft
+#
+name: KanyeMod
+main: org.kanyecraft.kanyemod.KanyeMod
+version: 0.1
