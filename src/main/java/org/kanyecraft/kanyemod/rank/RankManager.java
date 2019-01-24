@@ -29,7 +29,7 @@ public class RankManager
             return Rank.IMPOSTOR;
         }
 
-        return Rank.findRank(path + ".rank");
+        return Rank.findRank(admins.getString( path + ".rank"));
     }
 
     public static Rank getRank(CommandSender sender)

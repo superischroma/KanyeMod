@@ -13,3 +13,12 @@ server:
 
   # Owner(s)
   owners: []
+
+# Command and Chat Formats
+formats:
+
+  # Simple Chat Format
+  chat: '%display%&7: &f%message%'
+
+  # AdminChat Format
+  admin: '[&bADMIN&f] &4%name% %tagcolor%[%tag%]&f: &b%message%'

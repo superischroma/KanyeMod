@@ -38,6 +38,9 @@ public class KanyeMod extends JavaPlugin
     private void registerCommands()
     {
         new Command_admin().register();
+        new Command_adminchat().register();
+        new Command_myadmin().register();
+        new Command_commandspy().register();
     }
 
     private void registerListeners()

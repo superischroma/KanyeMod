@@ -18,4 +18,14 @@ public class KConfig
     {
         return config.getStringList("server.owners");
     }
+
+    public static String getChatFormat()
+    {
+        return config.getString("formats.chat");
+    }
+
+    public static String getAdminChatFormat()
+    {
+        return config.getString("formats.admin");
+    }
 }

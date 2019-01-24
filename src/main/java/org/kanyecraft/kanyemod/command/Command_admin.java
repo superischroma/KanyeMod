@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.admin.AdminList;
 import org.kanyecraft.kanyemod.rank.Rank;
 
-@CommandParameters(name = "admin", description = "Manage the admins.", usage = "/<command> [add <player> | remove <player> | setrank <player> <rank>]", rank = Rank.ADMIN)
+@CommandParameters(name = "admin", description = "Manage the admins.", usage = "/<command> [add <player> | remove <player> | setrank <player> <rank>]", aliases = "saconfig", rank = Rank.ADMIN)
 public class Command_admin extends KanyeCommand
 {
     @Override

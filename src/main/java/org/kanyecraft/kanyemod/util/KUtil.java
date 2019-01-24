@@ -1,6 +1,7 @@
 package org.kanyecraft.kanyemod.util;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -17,5 +18,10 @@ public class KUtil
     public static void broadcast(String s)
     {
         Bukkit.broadcastMessage(s);
+    }
+
+    public static String colorize(String s)
+    {
+        return ChatColor.translateAlternateColorCodes('&', s);
     }
 }

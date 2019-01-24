@@ -16,7 +16,7 @@ public class AdminList
         List<String> ips = new ArrayList<String>();
         ips.add(KUtil.getIp(player));
         admins.set(path + ".name", player.getName());
-        if (!admins.contains(path))
+        if (!admins.contains(path + ".rank"))
         {
             admins.set(path + ".rank", Rank.ADMIN.name());
         }
@@ -46,5 +46,19 @@ public class AdminList
     {
         admins.set(player.getName().toLowerCase() + ".rank", rank.name());
         admins.save();
+    }
+    public static boolean hasCustomACFormat(Player player)
+    {
+        return admins.contains(player.getName().toLowerCase() + ".acformat");
+    }
+
+    public static boolean hasCustomLoginMSG(Player player)
+    {
+        return admins.contains(player.getName().toLowerCase() + ".login");
+    }
+
+    public static boolean isCommandSpyEnabled(Player player)
+    {
+        return admins.getBoolean(player.getName().toLowerCase() + ".commandspy");
     }
 }
