@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.admin.Admin;
+import org.kanyecraft.kanyemod.player.PlayerData;
 import org.kanyecraft.kanyemod.rank.Display;
 import org.kanyecraft.kanyemod.rank.Rank;
 import org.kanyecraft.kanyemod.rank.RankManager;
@@ -28,6 +29,7 @@ public abstract class KanyeCommand implements CommandExecutor, TabCompleter
     private final Source source;
     public KanyeMod plugin = KanyeMod.getInstance();
     public final Admin admins = Admin.getConfig();
+    public final PlayerData players = PlayerData.getConfig();
 
     private final CommandParameters params;
 

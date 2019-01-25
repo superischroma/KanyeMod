@@ -11,9 +11,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.admin.Admin;
 import org.kanyecraft.kanyemod.admin.AdminList;
+import org.kanyecraft.kanyemod.player.PlayerData;
 import org.kanyecraft.kanyemod.rank.Rank;
 import org.kanyecraft.kanyemod.rank.RankManager;
 import org.kanyecraft.kanyemod.util.KConfig;
+import org.kanyecraft.kanyemod.util.KLog;
 import org.kanyecraft.kanyemod.util.KUtil;
 
 public class PlayerListener implements Listener
@@ -25,11 +27,18 @@ public class PlayerListener implements Listener
     }
 
     Admin admins = Admin.getConfig();
+    PlayerData players = PlayerData.getConfig();
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e)
     {
         Player player = e.getPlayer();
+        if (!players.contains(player.getName().toLowerCase()))
+        {
+            KLog.info("Creating new player data entry for " + player.getName());
+            PlayerData.initalizePlayer(player);
+        }
+
         if (AdminList.isAdmin(player))
         {
             if (AdminList.isImpostor(player))
@@ -65,6 +74,11 @@ public class PlayerListener implements Listener
                 .replace("%display%", player.getDisplayName())
                 .replace("%message%", e.getMessage());
         chatFormat = KUtil.colorize(chatFormat);
+        if (PlayerData.hasTag(player))
+        {
+            e.setFormat(PlayerData.getTag(player) + " " + chatFormat);
+            return;
+        }
         if (AdminList.isAdmin(player))
         {
             e.setFormat(RankManager.getDisplay(player).getTag() + " " + chatFormat);

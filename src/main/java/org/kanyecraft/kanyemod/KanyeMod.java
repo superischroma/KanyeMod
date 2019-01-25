@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.kanyecraft.kanyemod.admin.Admin;
 import org.kanyecraft.kanyemod.command.*;
 import org.kanyecraft.kanyemod.listener.*;
+import org.kanyecraft.kanyemod.player.PlayerData;
 import org.kanyecraft.kanyemod.util.KLog;
 
 public class KanyeMod extends JavaPlugin
@@ -43,6 +44,7 @@ public class KanyeMod extends JavaPlugin
         new Command_commandspy().register();
         new Command_say().register();
         new Command_adminmode().register();
+        new Command_tag().register();
     }
 
     private void registerListeners()
@@ -61,5 +63,8 @@ public class KanyeMod extends JavaPlugin
         Admin admins = Admin.getConfig();
         admins.options().copyDefaults(true);
         admins.save();
+        PlayerData players = PlayerData.getConfig();
+        players.options().copyDefaults(true);
+        players.save();
     }
 }
