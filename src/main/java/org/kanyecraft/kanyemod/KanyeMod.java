@@ -84,5 +84,8 @@ public class KanyeMod extends JavaPlugin
         PlayerData players = PlayerData.getConfig();
         players.options().copyDefaults(true);
         players.save();
+        Bans bans = Bans.getConfig();
+        bans.options().copyDefaults(true);
+        bans.save();
     }
 }

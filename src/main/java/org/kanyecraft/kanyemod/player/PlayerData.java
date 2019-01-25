@@ -1,12 +1,14 @@
 package org.kanyecraft.kanyemod.player;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.util.KUtil;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PlayerData extends YamlConfiguration
 {
@@ -122,13 +124,25 @@ public class PlayerData extends YamlConfiguration
 
     public static void addNote(Player player, String note)
     {
-        playerz.getStringList(player.getName().toLowerCase() + ".notes").add(note);
+        List<String> notes = playerz.getStringList(player.getName().toLowerCase() + ".notes");
+        notes.add(note);
+        playerz.set(player.getName().toLowerCase() + ".notes", notes);
+        playerz.save();
+    }
+
+    public static void removeNote(Player player, String note)
+    {
+        List<String> notes = playerz.getStringList(player.getName().toLowerCase() + ".notes");
+        notes.remove(note);
+        playerz.set(player.getName().toLowerCase() + ".notes", notes);
         playerz.save();
     }
 
     public static void clearNotes(Player player)
     {
-        playerz.getStringList(player.getName().toLowerCase() + ".notes").clear();
+        List<String> notes = playerz.getStringList(player.getName().toLowerCase() + ".notes");
+        notes.clear();
+        playerz.set(player.getName().toLowerCase() + ".notes", notes);
         playerz.save();
     }
 }

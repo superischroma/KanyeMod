@@ -16,6 +16,7 @@ public class Command_notes extends KanyeCommand
     public boolean onCommand(CommandSender sender, Command cmd, String c, String[] args)
     {
         Player player = (Player) sender;
+        List<String> notes = players.getStringList(sender.getName().toLowerCase() + ".notes");
         if (args.length > 1)
         {
             if (args[0].equalsIgnoreCase("add"))
@@ -29,6 +30,22 @@ public class Command_notes extends KanyeCommand
                 sender.sendMessage(ChatColor.GRAY + "New note added. Do \"/notes\" to view it.");
                 return true;
             }
+            if (args[0].equalsIgnoreCase("remove"))
+            {
+                String note = StringUtils.join(args, " ", 1, args.length);
+                if (note.length() == 0)
+                {
+                    return false;
+                }
+                if (!notes.contains(note))
+                {
+                    player.sendMessage(ChatColor.GRAY + "Note could not be found.");
+                    return true;
+                }
+                PlayerData.removeNote(player, note);
+                sender.sendMessage(ChatColor.GRAY + "Note removed.");
+                return true;
+            }
         }
         if (args.length == 1)
         {
@@ -39,7 +56,6 @@ public class Command_notes extends KanyeCommand
                 return true;
             }
         }
-        List<String> notes = players.getStringList(sender.getName().toLowerCase() + ".notes");
         StringBuilder sb = new StringBuilder()
                 .append(ChatColor.DARK_GREEN + "Notes: ");
         if (notes.isEmpty())
