@@ -4,7 +4,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.util.KUtil;
-
 import java.io.File;
 
 public class PlayerData extends YamlConfiguration
@@ -60,7 +59,7 @@ public class PlayerData extends YamlConfiguration
         plugin.saveResource("playerdata.yml", false);
     }
 
-    // Methods and related
+    // Methods
 
     private static PlayerData playerz = PlayerData.getConfig();
 

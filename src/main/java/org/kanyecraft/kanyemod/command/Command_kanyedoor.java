@@ -1,12 +1,10 @@
 package org.kanyecraft.kanyemod.command;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.KanyeDoor;
-import org.kanyecraft.kanyemod.util.KLog;
 
 @CommandParameters(name = "kanyedoor", source = Source.IN_GAME)
 public class Command_kanyedoor extends KanyeCommand

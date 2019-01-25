@@ -7,7 +7,6 @@ import org.bukkit.util.Vector;
 import org.kanyecraft.kanyemod.admin.AdminList;
 import org.kanyecraft.kanyemod.util.KLog;
 import org.kanyecraft.kanyemod.util.KUtil;
-
 import java.util.*;
 
 public class KanyeDoor extends TimerTask
@@ -65,7 +64,7 @@ public class KanyeDoor extends TimerTask
     public void run()
     {
         final int action = random.nextInt(3); // Number of cases
-        if (!enabled)
+        if (!isEnabled())
         {
             return;
         }
