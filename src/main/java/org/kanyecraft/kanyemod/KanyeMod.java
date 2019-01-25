@@ -47,6 +47,7 @@ public class KanyeMod extends JavaPlugin
         new Command_adminmode().register();
         new Command_tag().register();
         new Command_toggle().register();
+        new Command_kanyedoor().register();
     }
 
     private void registerListeners()
