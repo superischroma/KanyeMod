@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.util.KUtil;
 import java.io.File;
+import java.util.ArrayList;
 
 public class PlayerData extends YamlConfiguration
 {
@@ -68,6 +69,7 @@ public class PlayerData extends YamlConfiguration
     {
         playerz.set(player.getName().toLowerCase() + ".name", player.getName());
         playerz.set(player.getName().toLowerCase() + ".vanished", false);
+        playerz.set(player.getName().toLowerCase() + ".notes", new ArrayList<String>());
         playerz.save();
     }
 
@@ -116,5 +118,17 @@ public class PlayerData extends YamlConfiguration
     public static boolean isVanished(Player player)
     {
         return playerz.getBoolean(player.getName().toLowerCase() + ".vanished");
+    }
+
+    public static void addNote(Player player, String note)
+    {
+        playerz.getStringList(player.getName().toLowerCase() + ".notes").add(note);
+        playerz.save();
+    }
+
+    public static void clearNotes(Player player)
+    {
+        playerz.getStringList(player.getName().toLowerCase() + ".notes").clear();
+        playerz.save();
     }
 }

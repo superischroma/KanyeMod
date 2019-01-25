@@ -52,6 +52,7 @@ public class KanyeMod extends JavaPlugin
         new Command_gchat().register();
         new Command_gcmd().register();
         new Command_vanish().register();
+        new Command_notes().register();
     }
 
     private void registerListeners()
