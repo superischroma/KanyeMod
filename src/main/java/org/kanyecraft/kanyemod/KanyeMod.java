@@ -3,12 +3,13 @@ package org.kanyecraft.kanyemod;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.kanyecraft.kanyemod.admin.Admin;
+import org.kanyecraft.kanyemod.admin.*;
+import org.kanyecraft.kanyemod.banning.*;
 import org.kanyecraft.kanyemod.blocking.*;
 import org.kanyecraft.kanyemod.command.*;
 import org.kanyecraft.kanyemod.listener.*;
-import org.kanyecraft.kanyemod.player.PlayerData;
-import org.kanyecraft.kanyemod.util.KLog;
+import org.kanyecraft.kanyemod.player.*;
+import org.kanyecraft.kanyemod.util.*;
 
 public class KanyeMod extends JavaPlugin
 {
@@ -48,6 +49,10 @@ public class KanyeMod extends JavaPlugin
         new Command_tag().register();
         new Command_toggle().register();
         new Command_kanyedoor().register();
+        new Command_gchat().register();
+        new Command_gcmd().register();
+        new Command_vanish().register();
+        new Command_notes().register();
     }
 
     private void registerListeners()
@@ -56,6 +61,7 @@ public class KanyeMod extends JavaPlugin
 
         // Listeners
         manager.registerEvents(new PlayerListener(this), this);
+        manager.registerEvents(new BanListener(this), this);
         manager.registerEvents(new Freeze(this), this);
         manager.registerEvents(new ServerPing(this), this);
         manager.registerEvents(new AdminMode(this), this);

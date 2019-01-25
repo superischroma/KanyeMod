@@ -1,2 +1,2 @@
 # KanyeMod
-For Robin
+Plugin specifically created for the KanyeCraft server.

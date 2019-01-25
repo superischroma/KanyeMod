@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.admin.Admin;
 import org.kanyecraft.kanyemod.admin.AdminList;
@@ -39,6 +40,13 @@ public class PlayerListener implements Listener
             PlayerData.initalizePlayer(player);
         }
 
+        if (PlayerData.isVanished(player))
+        {
+            e.setJoinMessage(null);
+            player.sendMessage(ChatColor.GRAY + "You logged in silently since you were vanished when you were last online.");
+            return;
+        }
+
         if (AdminList.isImpostor(player))
         {
             KUtil.broadcast(ChatColor.GREEN + player.getName() + " is " + Rank.IMPOSTOR.getLoginMessage());
@@ -63,6 +71,16 @@ public class PlayerListener implements Listener
             }
 
             KUtil.broadcast(ChatColor.GREEN + player.getName() + " is " + RankManager.getDisplay(player).getLoginMessage());
+        }
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent e)
+    {
+        Player player = e.getPlayer();
+        if (PlayerData.isVanished(player))
+        {
+            e.setQuitMessage(null);
         }
     }
 
