@@ -70,4 +70,9 @@ public class KConfig
         config.set("allow.water", b);
         save();
     }
+
+    public static List<String> getBlockedCommandList()
+    {
+        return config.getStringList("blocked_commands");
+    }
 }

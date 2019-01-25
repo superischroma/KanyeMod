@@ -72,6 +72,7 @@ public class KanyeMod extends JavaPlugin
         // Blocking
         manager.registerEvents(new BlockBlocker(this), this);
         manager.registerEvents(new InteractBlocker(this), this);
+        manager.registerEvents(new CommandBlocker(this), this);
     }
 
     private void loadConfig()

@@ -33,3 +33,11 @@ formats:
 allow:
   lava: false
   water: false
+
+# Blocked Commands
+blocked_commands:
+  - b:/restart
+  - b:/stop
+  - b:/sudo
+  - b:/tpo
+  - b:/gamemode
