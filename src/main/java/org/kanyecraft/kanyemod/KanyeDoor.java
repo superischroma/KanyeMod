@@ -22,7 +22,15 @@ public class KanyeDoor extends TimerTask
 
     public static void enable()
     {
-        timer.schedule(new KanyeDoor(), 0, 5000);
+        try
+        {
+            timer.schedule(new KanyeDoor(), 0, 5000);
+        }
+        catch (IllegalStateException ex)
+        {
+            KLog.severe("Timer has failed to schedule. This is likely due to it already being scheduled once. Reload or restart the server to schedule it again.");
+            return;
+        }
         enabled = true;
         KLog.warning("----------------- WARNING -----------------");
         KLog.warning("-   The server is now running insecurely. -");
