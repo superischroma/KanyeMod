@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kanyecraft.kanyemod.admin.Admin;
+import org.kanyecraft.kanyemod.blocking.*;
 import org.kanyecraft.kanyemod.command.*;
 import org.kanyecraft.kanyemod.listener.*;
 import org.kanyecraft.kanyemod.player.PlayerData;
@@ -45,15 +46,25 @@ public class KanyeMod extends JavaPlugin
         new Command_say().register();
         new Command_adminmode().register();
         new Command_tag().register();
+        new Command_toggle().register();
     }
 
     private void registerListeners()
     {
         PluginManager manager = Bukkit.getServer().getPluginManager();
+
+        // Listeners
         manager.registerEvents(new PlayerListener(this), this);
         manager.registerEvents(new Freeze(this), this);
         manager.registerEvents(new ServerPing(this), this);
         manager.registerEvents(new AdminMode(this), this);
+
+        // Fun
+        manager.registerEvents(new ItemFun(this), this);
+
+        // Blocking
+        manager.registerEvents(new BlockBlocker(this), this);
+        manager.registerEvents(new InteractBlocker(this), this);
     }
 
     private void loadConfig()

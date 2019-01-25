@@ -9,6 +9,11 @@ public class KConfig
 {
     private static FileConfiguration config = KanyeMod.getInstance().getConfig();
 
+    private static void save()
+    {
+        KanyeMod.getInstance().saveConfig();
+    }
+
     public static List<String> getExecutiveList()
     {
         return config.getStringList("server.executives");
@@ -42,5 +47,27 @@ public class KConfig
     public static String getServerName()
     {
         return config.getString("server.name");
+    }
+
+    public static boolean isLavaEnabled()
+    {
+        return config.getBoolean("allow.lava");
+    }
+
+    public static void setLavaEnabled(boolean b)
+    {
+        config.set("allow.lava", b);
+        save();
+    }
+
+    public static boolean isWaterEnabled()
+    {
+        return config.getBoolean("allow.water");
+    }
+
+    public static void setWaterEnabled(boolean b)
+    {
+        config.set("allow.water", b);
+        save();
     }
 }

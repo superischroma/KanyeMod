@@ -28,3 +28,8 @@ formats:
 
   # /say Format
   say: '&d[Server:%name%] %message%'
+
+# Allow and disallow features
+allow:
+  lava: false
+  water: false
