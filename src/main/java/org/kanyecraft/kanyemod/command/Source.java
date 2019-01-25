@@ -4,5 +4,5 @@ public enum Source
 {
     ALL,
     IN_GAME,
-    CONSOLE;
+    CONSOLE
 }

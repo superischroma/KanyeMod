@@ -28,4 +28,19 @@ public class KConfig
     {
         return config.getString("formats.admin");
     }
+
+    public static String getSayFormat()
+    {
+        return config.getString("formats.say");
+    }
+
+    public static String getServerMOTD()
+    {
+        return config.getString("server.motd");
+    }
+
+    public static String getServerName()
+    {
+        return config.getString("server.name");
+    }
 }

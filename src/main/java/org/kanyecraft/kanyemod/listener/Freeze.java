@@ -9,10 +9,10 @@ import org.kanyecraft.kanyemod.KanyeMod;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FreezeListener implements Listener
+public class Freeze implements Listener
 {
     private KanyeMod plugin;
-    public FreezeListener(KanyeMod plugin)
+    public Freeze(KanyeMod plugin)
     {
         this.plugin = plugin;
     }

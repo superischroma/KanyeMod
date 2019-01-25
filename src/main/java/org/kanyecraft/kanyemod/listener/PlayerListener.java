@@ -8,7 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.server.ServerCommandEvent;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.admin.Admin;
 import org.kanyecraft.kanyemod.admin.AdminList;
@@ -44,7 +43,7 @@ public class PlayerListener implements Listener
                     }
                 }
                 player.setOp(false);
-                FreezeListener.freeze(player);
+                Freeze.freeze(player);
                 return;
             }
 

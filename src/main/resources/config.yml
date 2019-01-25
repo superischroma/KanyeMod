@@ -8,6 +8,9 @@ server:
   # Server Name
   name: KanyeCraft
 
+  # Server MOTD
+  motd: '&5KanyeCraft &8- &5Spigot 1.12.2'
+
   # Executives
   executives: []
 
@@ -17,8 +20,11 @@ server:
 # Command and Chat Formats
 formats:
 
-  # Simple Chat Format
+  # Public Chat Format
   chat: '%display%&7: &f%message%'
 
-  # AdminChat Format
+  # Default AdminChat Format
   admin: '[&bADMIN&f] &4%name% %tagcolor%[%tag%]&f: &b%message%'
+
+  # /say Format
+  say: '&d[Server:%name%] %message%'
