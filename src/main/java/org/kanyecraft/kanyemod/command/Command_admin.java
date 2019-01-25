@@ -6,7 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.admin.AdminList;
+import org.kanyecraft.kanyemod.listener.Freeze;
 import org.kanyecraft.kanyemod.rank.Rank;
+import org.kanyecraft.kanyemod.util.KUtil;
 
 @CommandParameters(name = "admin", description = "Manage the admins.", usage = "/<command> [add <player> | remove <player> | setrank <player> <rank>]", aliases = "saconfig", rank = Rank.ADMIN)
 public class Command_admin extends KanyeCommand
@@ -29,6 +31,15 @@ public class Command_admin extends KanyeCommand
                     if (player == null)
                     {
                         sender.sendMessage(playerNotFound);
+                        return true;
+                    }
+                    if (AdminList.isImpostor(player))
+                    {
+                        action(sender.getName(), "Re-adding " + player.getName() + " to the admin list", ChatColor.RED);
+                        AdminList.addIp(player, KUtil.getIp(player));
+                        Freeze.unfreeze(player);
+                        player.setOp(true);
+                        player.sendMessage(opped);
                         return true;
                     }
                     if (AdminList.isAdmin(player))

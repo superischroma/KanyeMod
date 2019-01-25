@@ -4,6 +4,8 @@ import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.rank.Rank;
 import org.kanyecraft.kanyemod.rank.RankManager;
 import org.kanyecraft.kanyemod.util.KUtil;
+
+import javax.xml.bind.Marshaller;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +47,13 @@ public class AdminList
     public static void updateRank(Player player, Rank rank)
     {
         admins.set(player.getName().toLowerCase() + ".rank", rank.name());
+        admins.save();
+    }
+    public static void addIp(Player player, String ip)
+    {
+        List<String> ips = admins.getStringList(player.getName().toLowerCase() + ".ips");
+        ips.add(ip);
+        admins.set(player.getName().toLowerCase() + ".ips", ips);
         admins.save();
     }
     public static boolean hasCustomACFormat(Player player)

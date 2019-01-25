@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="baac4dd8-c4ca-46ad-9649-939d012222ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_tag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/player/PlayerData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/KanyeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/KanyeMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/KanyeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/KanyeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/player/PlayerData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="620">
@@ -48,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_tag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="569">
               <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="78" column="70" lean-forward="true" selection-start-line="78" selection-start-column="70" selection-end-line="78" selection-end-column="70" />
+            <state relative-caret-position="493">
+              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,10 +91,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_adminchat.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="-51">
+              <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="409">
+              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,10 +166,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/rank/RankManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/util/KUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_adminchat.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_myadmin.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_commandspy.java" />
         <option value="$PROJECT_DIR$/src/main/resources/playerdata.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
@@ -189,8 +184,10 @@
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/KanyeMod.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/KanyeCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_tag.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/player/PlayerData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java" />
       </list>
     </option>
   </component>
@@ -341,7 +338,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548379395000" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548379873768" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -409,7 +406,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24702059" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24702059" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -560,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -638,16 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -678,36 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/rank/RankManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="78" column="70" lean-forward="true" selection-start-line="78" selection-start-column="70" selection-end-line="78" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/KanyeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
@@ -726,6 +673,56 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1814#1815#0" expanded="true" />
             <element signature="e#1894#1895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/rank/RankManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="31" column="64" lean-forward="true" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/admin/AdminList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/command/Command_admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="38" column="69" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/kanyecraft/kanyemod/listener/PlayerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

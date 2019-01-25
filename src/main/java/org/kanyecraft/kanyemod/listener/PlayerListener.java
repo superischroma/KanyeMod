@@ -39,23 +39,23 @@ public class PlayerListener implements Listener
             PlayerData.initalizePlayer(player);
         }
 
+        if (AdminList.isImpostor(player))
+        {
+            KUtil.broadcast(ChatColor.GREEN + player.getName() + " is " + Rank.IMPOSTOR.getLoginMessage());
+            for (Player all : Bukkit.getOnlinePlayers())
+            {
+                if (AdminList.isAdmin(all))
+                {
+                    all.sendMessage(ChatColor.RED + "NOTICE: " + player.getName() + " has been marked as an impostor and needs to be verified.");
+                }
+            }
+            player.setOp(false);
+            Freeze.freeze(player);
+            return;
+        }
+
         if (AdminList.isAdmin(player))
         {
-            if (AdminList.isImpostor(player))
-            {
-                KUtil.broadcast(ChatColor.GREEN + player.getName() + " is " + Rank.IMPOSTOR.getLoginMessage());
-                for (Player all : Bukkit.getOnlinePlayers())
-                {
-                    if (AdminList.isAdmin(all))
-                    {
-                        all.sendMessage(ChatColor.RED + "NOTICE: " + player.getName() + " has been marked as an impostor and needs to be verified.");
-                    }
-                }
-                player.setOp(false);
-                Freeze.freeze(player);
-                return;
-            }
-
             if (AdminList.hasCustomLoginMSG(player))
             {
                 KUtil.broadcast(ChatColor.GREEN + player.getName() + " is " + admins.getString(player.getName().toLowerCase() + ".login"));
