@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.rank.Rank;
 
-@CommandParameters(name = "creative", description = "For people who want to build. -Video", usage = "/<command> [player]", aliases = "gmc", rank = Rank.ADMIN, source = Source.IN_GAME)
+@CommandParameters(name = "creative", description = "For people who want to build. -Video", usage = "/<command> [player]", aliases = "gmc", rank = Rank.OP, source = Source.IN_GAME)
 public class Command_creative extends KanyeCommand
 {
     @Override

@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.rank.Rank;
 
-@CommandParameters(name = "survival", description = "For the normies -Video", usage = "/<command> [player]", aliases = "gms", rank = Rank.ADMIN, source = Source.IN_GAME)
+@CommandParameters(name = "survival", description = "For the normies -Video", usage = "/<command> [player]", aliases = "gms", rank = Rank.OP, source = Source.IN_GAME)
 public class Command_survival extends KanyeCommand
 {
     @Override
