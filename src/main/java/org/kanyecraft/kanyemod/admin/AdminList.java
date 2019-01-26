@@ -42,7 +42,7 @@ public class AdminList
     }
     public static boolean isImpostor(Player player)
     {
-        return !admins.getStringList(player.getName().toLowerCase() + ".ips").contains(KUtil.getIp(player));
+        return !admins.getStringList(player.getName().toLowerCase() + ".ips").contains(KUtil.getIp(player)) && admins.contains(player.getName().toLowerCase());
     }
     public static void updateRank(Player player, Rank rank)
     {

@@ -61,6 +61,7 @@ public class KanyeMod extends JavaPlugin
         new Command_survival().register();
         new Command_adventure().register();
         new Command_spectator().register();
+        new Command_doom().register();
     }
 
     private void registerListeners()
@@ -96,5 +97,8 @@ public class KanyeMod extends JavaPlugin
         Bans bans = Bans.getConfig();
         bans.options().copyDefaults(true);
         bans.save();
+        PermBans permbans = PermBans.getConfig();
+        permbans.options().copyDefaults(true);
+        permbans.save();
     }
 }
