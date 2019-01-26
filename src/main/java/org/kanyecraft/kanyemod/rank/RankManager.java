@@ -24,7 +24,7 @@ public class RankManager
             return player.isOp() ? Rank.OP : Rank.NON_OP;
         }
 
-        if (!admins.getStringList(path + ".ips").contains(KUtil.getIp(player)))
+        if (!admins.getStringList(path + ".ips").contains(KUtil.getIp(player)) && !admins.contains(path))
         {
             return Rank.IMPOSTOR;
         }
