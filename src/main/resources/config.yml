@@ -39,5 +39,6 @@ blocked_commands:
   - b:/restart
   - b:/stop
   - b:/sudo
-  - b:/tpo
   - b:/gamemode
+  - b:/reload
+  - b:/rl

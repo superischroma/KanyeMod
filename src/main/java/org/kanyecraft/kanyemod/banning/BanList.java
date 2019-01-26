@@ -1,6 +1,8 @@
 package org.kanyecraft.kanyemod.banning;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.kanyecraft.kanyemod.admin.AdminList;
 import org.kanyecraft.kanyemod.util.KUtil;
 
 import java.util.ArrayList;
@@ -9,8 +11,12 @@ import java.util.List;
 public class BanList
 {
     private static Bans bans = Bans.getConfig();
-    public static void addBan(Player banned, Player punisher, BanType type, String reason)
+    public static void addBan(Player banned, CommandSender punisher, BanType type, String reason)
     {
+        if (AdminList.isAdmin(banned))
+        {
+            return;
+        }
         String path = banned.getName().toLowerCase();
         boolean previouslyBanned = isBanned(banned);
         bans.set(path + ".name", banned.getName());
@@ -24,7 +30,7 @@ public class BanList
         }
         else
         {
-            List<String> ips = new ArrayList<>();
+            List<String> ips = new ArrayList<String>();
             ips.add(KUtil.getIp(banned));
             bans.set(path + ".ips", ips);
         }

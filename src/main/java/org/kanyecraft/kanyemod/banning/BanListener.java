@@ -27,7 +27,7 @@ public class BanListener implements Listener
         Player player = e.getPlayer();
         if (BanList.isBanned(player))
         {
-            if (System.currentTimeMillis() >= bans.getLong(player.getName().toLowerCase() + ".length") || AdminList.isAdmin(player))
+            if (System.currentTimeMillis() >= bans.getLong(player.getName().toLowerCase() + ".length"))
             {
                 BanList.removeBan(player);
                 return;

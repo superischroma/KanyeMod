@@ -1,20 +1,25 @@
 package org.kanyecraft.kanyemod.command;
 
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.kanyecraft.kanyemod.banning.BanList;
 import org.kanyecraft.kanyemod.rank.Rank;
 
-@CommandParameters(name = "gchat", description = "Talk as someone else.", usage = "/<command> <player> <message>", rank = Rank.ADMIN)
-public class Command_gchat extends KanyeCommand
+@CommandParameters(name = "unban", description = "Revoke a ban.", usage = "/<command> <player>", rank = Rank.ADMIN)
+public class Command_unban extends KanyeCommand
 {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String c, String[] args)
     {
-        if (args.length < 2)
+        if (args.length == 0)
+        {
+            return false;
+        }
+
+        if (args.length > 1)
         {
             return false;
         }
@@ -24,13 +29,13 @@ public class Command_gchat extends KanyeCommand
             sender.sendMessage(playerNotFound);
             return true;
         }
-        String msg = StringUtils.join(args, " ", 1, args.length);
-        if (msg.length() == 0)
+        if (!BanList.isBanned(player))
         {
-            return false;
+            sender.sendMessage(ChatColor.GRAY + "That player is not banned.");
+            return true;
         }
-        player.chat(msg);
-        sender.sendMessage(ChatColor.GRAY + "Sent the following message as " + player.getName() + ": " + msg);
+        action(sender.getName(), "Unbanning " + player.getName(), ChatColor.RED);
+        BanList.removeBan(player);
         return true;
     }
 }
