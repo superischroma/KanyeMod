@@ -62,6 +62,11 @@ public class KanyeMod extends JavaPlugin
         new Command_adventure().register();
         new Command_spectator().register();
         new Command_doom().register();
+        new Command_opall().register();
+        new Command_op().register();
+        new Command_deop().register();
+        new Command_deopall().register();
+        new Command_shoot().register();
     }
 
     private void registerListeners()
