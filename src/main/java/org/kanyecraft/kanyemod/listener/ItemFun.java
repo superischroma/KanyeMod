@@ -66,10 +66,7 @@ public class ItemFun implements Listener
             case BLAZE_ROD:
             {
                 Block block = e.getClickedBlock();
-                if (block == null)
-                {
-                    return;
-                }
+                if (block == null) return;
 
                 block.getWorld().strikeLightning(block.getLocation());
                 block.getWorld().createExplosion(block.getLocation(), 6F, true);

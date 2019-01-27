@@ -3,6 +3,7 @@ package org.kanyecraft.kanyemod.command;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.kanyecraft.kanyemod.listener.BlockFun;
 import org.kanyecraft.kanyemod.listener.ItemFun;
 import org.kanyecraft.kanyemod.rank.Rank;
 import org.kanyecraft.kanyemod.util.KConfig;
@@ -37,6 +38,12 @@ public class Command_toggle extends KanyeCommand
                 sender.sendMessage(ChatColor.GRAY + "Senior Admin item fun has been " + (ItemFun.isItemFunEnabled() ? "enabled." : "disabled."));
                 return true;
             }
+            if (args[0].equalsIgnoreCase("blockfun"))
+            {
+                BlockFun.toggleBlockFun(!BlockFun.isBlockFunEnabled());
+                sender.sendMessage(ChatColor.GRAY + "Block fun has been " + (BlockFun.isBlockFunEnabled() ? "enabled." : "disabled."));
+                return true;
+            }
             return false;
         }
 
@@ -44,6 +51,7 @@ public class Command_toggle extends KanyeCommand
         sender.sendMessage(ChatColor.GRAY + " - lava");
         sender.sendMessage(ChatColor.GRAY + " - water");
         sender.sendMessage(ChatColor.GRAY + " - itemfun");
+        sender.sendMessage(ChatColor.GRAY + " - blockfun");
         return true;
     }
 }

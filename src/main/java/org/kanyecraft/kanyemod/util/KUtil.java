@@ -10,6 +10,7 @@ import java.util.List;
 public class KUtil
 {
     public static final List<String> DEVELOPERS = Arrays.asList();
+
     public static String getIp(Player player)
     {
         return player.getAddress().getAddress().getHostAddress().trim();

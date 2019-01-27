@@ -82,6 +82,7 @@ public class KanyeMod extends JavaPlugin
 
         // Fun
         manager.registerEvents(new ItemFun(this), this);
+        manager.registerEvents(new BlockFun(this), this);
 
         // Blocking
         manager.registerEvents(new BlockBlocker(this), this);
