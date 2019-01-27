@@ -1,8 +1,5 @@
 package org.kanyecraft.kanyemod.listener;
 
-import jdk.nashorn.internal.ir.Block;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
@@ -12,14 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 import org.kanyecraft.kanyemod.KanyeMod;
-import org.kanyecraft.kanyemod.rank.Rank;
-import org.kanyecraft.kanyemod.rank.RankManager;
 import org.kanyecraft.kanyemod.util.KConfig;
-
-import java.util.Random;
 
 public class BlockFun implements Listener
 {
@@ -55,6 +47,7 @@ public class BlockFun implements Listener
         if (player.getLocation().subtract(0, 1, 0).getBlock().getType() == Material.WOOL)
         {
             // if so, it sets their velocity and shit
+            // todo: be able to toggle this feature and change the y velocity
             player.setVelocity(player.getVelocity().clone().add(new Vector(0, 50, 0)));
         }
     }
