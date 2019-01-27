@@ -2,6 +2,7 @@ package org.kanyecraft.kanyemod.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,16 +21,16 @@ public class ItemFun implements Listener
         this.plugin = plugin;
     }
 
-    private static boolean shoot = false;
+    private static boolean itemFun = false;
 
-    public static void allowShoot(boolean b)
+    public static void toggleItemFun(boolean b)
     {
-        shoot = b;
+        itemFun = b;
     }
 
-    public static boolean isShootingEnabled()
+    public static boolean isItemFunEnabled()
     {
-        return shoot;
+        return itemFun;
     }
 
     @EventHandler
@@ -45,18 +46,33 @@ public class ItemFun implements Listener
         {
             return;
         }
+        if (!isItemFunEnabled())
+        {
+            return;
+        }
         switch (e.getMaterial())
         {
-            case FIREWORK:
+            case BEACON:
             {
-                if (!isShootingEnabled())
+                for (Player all : Bukkit.getOnlinePlayers())
+                {
+                    all.setAllowFlight(true);
+                    all.setFlying(false);
+                    all.getWorld().strikeLightning(player.getLocation());
+                    all.setVelocity(player.getVelocity().clone().add(new Vector(0, 200, 0)));
+                }
+                break;
+            }
+            case BLAZE_ROD:
+            {
+                Block block = e.getClickedBlock();
+                if (block == null)
                 {
                     return;
                 }
-                player.setAllowFlight(true);
-                player.setFlying(false);
-                player.getWorld().createExplosion(player.getLocation(), 0.5F);
-                player.setVelocity(player.getVelocity().clone().add(new Vector(0, 20, 0)));
+
+                block.getWorld().strikeLightning(block.getLocation());
+                block.getWorld().createExplosion(block.getLocation(), 6F, true);
                 break;
             }
         }

@@ -43,8 +43,7 @@ public class Command_shoot extends KanyeCommand
                 action(sender.getName(), "Shooting themselves up", ChatColor.RED);
 
                 // lightning
-                int i;
-                for (i = 0; i < lightningnum; i++)
+                for (int i = 0; i < lightningnum; i++)
                 {
                     player.getWorld().strikeLightning(player.getLocation());
                 }

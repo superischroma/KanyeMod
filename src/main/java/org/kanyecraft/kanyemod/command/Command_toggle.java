@@ -31,10 +31,10 @@ public class Command_toggle extends KanyeCommand
                 sender.sendMessage(ChatColor.GRAY + "Water placement has been " + (KConfig.isWaterEnabled() ? "enabled." : "disabled."));
                 return true;
             }
-            if (args[0].equalsIgnoreCase("shoot"))
+            if (args[0].equalsIgnoreCase("itemfun"))
             {
-                ItemFun.allowShoot(!ItemFun.isShootingEnabled());
-                sender.sendMessage(ChatColor.GRAY + "Senior Admin shooting has been " + (ItemFun.isShootingEnabled() ? "enabled." : "disabled."));
+                ItemFun.toggleItemFun(!ItemFun.isItemFunEnabled());
+                sender.sendMessage(ChatColor.GRAY + "Senior Admin item fun has been " + (ItemFun.isItemFunEnabled() ? "enabled." : "disabled."));
                 return true;
             }
             return false;
@@ -43,6 +43,7 @@ public class Command_toggle extends KanyeCommand
         sender.sendMessage(ChatColor.GRAY + "Toggleable features:");
         sender.sendMessage(ChatColor.GRAY + " - lava");
         sender.sendMessage(ChatColor.GRAY + " - water");
+        sender.sendMessage(ChatColor.GRAY + " - itemfun");
         return true;
     }
 }

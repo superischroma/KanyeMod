@@ -2,9 +2,9 @@ package org.kanyecraft.kanyemod.command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.banning.BanList;
 import org.kanyecraft.kanyemod.rank.Rank;
 
@@ -23,12 +23,7 @@ public class Command_unban extends KanyeCommand
         {
             return false;
         }
-        Player player = Bukkit.getPlayer(args[0]);
-        if (player == null)
-        {
-            sender.sendMessage(playerNotFound);
-            return true;
-        }
+        OfflinePlayer player = Bukkit.getOfflinePlayer(args[0]);
         if (!BanList.isBanned(player))
         {
             sender.sendMessage(ChatColor.GRAY + "That player is not banned.");

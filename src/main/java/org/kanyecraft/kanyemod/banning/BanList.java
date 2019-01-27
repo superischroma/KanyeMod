@@ -1,5 +1,6 @@
 package org.kanyecraft.kanyemod.banning;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.kanyecraft.kanyemod.admin.AdminList;
@@ -37,13 +38,13 @@ public class BanList
         bans.save();
     }
 
-    public static void removeBan(Player banned)
+    public static void removeBan(OfflinePlayer banned)
     {
         bans.set(banned.getName().toLowerCase(), null);
         bans.save();
     }
 
-    public static boolean isBanned(Player player)
+    public static boolean isBanned(OfflinePlayer player)
     {
         return bans.contains(player.getName().toLowerCase());
     }

@@ -76,8 +76,7 @@ public class Command_ban extends KanyeCommand
                 player.getInventory().clear();
 
                 // strike 4 lightning bolts
-                int i;
-                for (i = 0; i < 4; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     player.getWorld().strikeLightning(player.getLocation());
                 }

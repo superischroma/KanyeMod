@@ -59,8 +59,7 @@ public class Command_doom extends KanyeCommand
                 player.getInventory().clear();
 
                 // strike 4 lightning bolts
-                int i;
-                for (i = 0; i < 50; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     player.getWorld().strikeLightning(player.getLocation());
                 }
