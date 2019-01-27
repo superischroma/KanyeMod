@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.kanyecraft.kanyemod.KanyeMod;
 import org.kanyecraft.kanyemod.admin.AdminList;
+import org.kanyecraft.kanyemod.util.KUtil;
+
 import java.text.SimpleDateFormat;
 
 public class BanListener implements Listener
@@ -19,12 +21,19 @@ public class BanListener implements Listener
 
     private static Bans bans = Bans.getConfig();
 
+    private static PermBans permbans = PermBans.getConfig();
+
     private static SimpleDateFormat releaseTime = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 
     @EventHandler
     public void onPlayerLogin(PlayerLoginEvent e)
     {
         Player player = e.getPlayer();
+        if (permbans.getStringList("names").contains(player.getName()) || permbans.getStringList("ips").contains(e.getAddress().getHostAddress().trim()))
+        {
+            e.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.RED + "You currently permanently banned from this server.");
+            return;
+        }
         if (BanList.isBanned(player))
         {
             if (System.currentTimeMillis() >= bans.getLong(player.getName().toLowerCase() + ".length"))
