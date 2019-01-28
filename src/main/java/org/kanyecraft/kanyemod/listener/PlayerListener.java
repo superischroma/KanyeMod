@@ -85,27 +85,6 @@ public class PlayerListener implements Listener
     }
 
     @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent e)
-    {
-        Player player = e.getPlayer();
-        String chatFormat = "&r" + KConfig.getChatFormat()
-                .replace("%display%", player.getDisplayName())
-                .replace("%message%", e.getMessage());
-        chatFormat = KUtil.colorize(chatFormat);
-        if (PlayerData.hasTag(player))
-        {
-            e.setFormat(PlayerData.getTag(player) + " " + chatFormat);
-            return;
-        }
-        if (AdminList.isAdmin(player))
-        {
-            e.setFormat(RankManager.getDisplay(player).getTag() + " " + chatFormat);
-            return;
-        }
-        e.setFormat(chatFormat);
-    }
-
-    @EventHandler
     public void onPlayerPreprocess(PlayerCommandPreprocessEvent e)
     {
         Player player = e.getPlayer();

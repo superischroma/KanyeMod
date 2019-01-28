@@ -79,6 +79,8 @@ public class KanyeMod extends JavaPlugin
         manager.registerEvents(new Freeze(this), this);
         manager.registerEvents(new ServerPing(this), this);
         manager.registerEvents(new AdminMode(this), this);
+        manager.registerEvents(new MuteManager(this), this);
+        manager.registerEvents(new ChatManager(this), this);
 
         // Fun
         manager.registerEvents(new ItemFun(this), this);
