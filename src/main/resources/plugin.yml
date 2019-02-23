@@ -1,6 +1,6 @@
 #
-# Plugin Configuration - SuperPLUS
+# Plugin Configuration - KanyeMod
 #
-name: SuperPLUS
-main: me.superischroma.superplus.SuperPLUS
+name: KanyeMod
+main: org.kanyecraft.kanyemod.KanyeMod
 version: 0.1

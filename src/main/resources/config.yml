@@ -1,19 +1,21 @@
 #
-# Main Configuration - SuperPLUS
+# Main Configuration - KanyeMod
 #
 
 # Server
 server:
 
   # Server Name
-  name: Super
+  name: KanyeCraft
 
   # Server MOTD
-  motd: '&dSuper &8- &dSpigot 1.12.2'
+  motd: '&5KanyeCraft &8- &5Spigot 1.12.2'
 
-  # Managers
-  managers:
-    - Super_
+  # Executives
+  executives: []
+
+  # Owner(s)
+  owners: []
 
 # Command and Chat Formats
 formats:
